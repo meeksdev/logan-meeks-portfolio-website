@@ -11,7 +11,7 @@ import {
 
 export default function Header() {
     return (
-        <header className="flex items-center justify-center p-8">
+        <header className="sticky top-0 z-50 flex items-center justify-center p-8 bg-background border-b">
             <NavigationMenu>
                 <NavigationMenuList className="flex gap-6 flex-wrap items-center justify-center">
                     <NavigationMenuItem>
