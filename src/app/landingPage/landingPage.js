@@ -59,15 +59,15 @@ export default function LandingPage() {
             setInViewElement('hero');
         } */
 
-        console.log(inViewElement);
-    }, [heroInView, aboutInView, skillsInView]);
+        // console.log(inViewElement);
+    }, [heroInView, aboutInView, skillsInView, projectsInView, contactInView]);
 
     return (
         <>
             <Header inViewElement={inViewElement} />
             <main>
                 {/* Hero Section */}
-                <section id="hero" ref={heroRef} className="relative flex bg-secondary justify-center items-center overflow-hidden">
+                <section id="hero" ref={heroRef} className="relative flex bg-secondary justify-center items-center overflow-hidden border-b">
                     <div className="w-full h-full flex-1 flex justify-end items-center">
                         <div className="w-fit h-fit flex justify-center items-center">
                             <svg
@@ -91,24 +91,26 @@ export default function LandingPage() {
                     </div>
 
                     <div className="w-full px-16 py-40 z-10 flex-[1.5]">
-                        <h1 className="w-fit text-5xl">
+                        <h1 className="w-fit text-5xl font-bold leading-tight">
                             Hi, I'm Logan Meeks. <br /> I'm a full stack developer.
                         </h1>
-                        <Button asChild className="w-fit">
+                        <Button asChild className="w-fit mt-2">
                             <Link href="#contact">Contact Me</Link>
                         </Button>
                     </div>
                 </section>
 
                 {/* About Me Section */}
-                <section id="about" ref={aboutRef} className="p-16">
-                    <h2 className="text-2xl mb-12">About Me</h2>
+                <section id="about" ref={aboutRef} className="px-16 py-24">
+                    <h2 className="text-2xl font-medium mb-12">About Me</h2>
                     <section className="flex gap-12 justify-between">
                         <div className="flex flex-col justify-between w-full">
                             <p>Lorem Ipsum Dolor Sit Amet...</p>
-                            <div className="flex gap-4">
-                                <Button variant="secondary">Resume</Button>
-                                <Button>Contact Me</Button>
+                            <div className="flex gap-4 w-72">
+                                <Button variant="secondary" className="w-full">
+                                    Resume
+                                </Button>
+                                <Button className="w-full">Contact Me</Button>
                             </div>
                         </div>
                         <Image className="w-full max-w-lg" src="/pup-n-me.jpg" alt="Picture of Logan Meeks" width={400} height={400} />
@@ -116,8 +118,8 @@ export default function LandingPage() {
                 </section>
 
                 {/* Skills Section */}
-                <section id="skills" ref={skillsRef} className="p-16 visible:bg-red-500">
-                    <h2 className="text-2xl mb-12">Skills</h2>
+                <section id="skills" ref={skillsRef} className="px-16 py-24 visible:bg-red-500">
+                    <h2 className="text-2xl font-medium mb-12">Skills</h2>
                     <section className="flex gap-12">
                         <Card className="w-full flex gap-6 p-6">
                             <CardHeader className="p-0">
@@ -153,8 +155,8 @@ export default function LandingPage() {
                 </section>
 
                 {/* Projects Section */}
-                <section id="projects" ref={projectsRef} className="p-16">
-                    <h2 className="text-2xl mb-12">Projects</h2>
+                <section id="projects" ref={projectsRef} className="px-16 py-24">
+                    <h2 className="text-2xl font-medium mb-12">Projects</h2>
                     <section className="flex gap-12">
                         <Card className="flex flex-col w-full">
                             <CardHeader className="h-full flex flex-col justify-center">
@@ -224,8 +226,8 @@ export default function LandingPage() {
                 </section>
 
                 {/* Contact Section */}
-                <section id="contact" ref={contactRef} className="p-16">
-                    <h2 className="text-2xl mb-12">Contact</h2>
+                <section id="contact" ref={contactRef} className="px-16 py-24">
+                    <h2 className="text-2xl font-medium mb-12">Contact</h2>
                     <ContactForm />
                 </section>
             </main>

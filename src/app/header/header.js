@@ -15,40 +15,27 @@ export default function Header({ inViewElement }) {
             <NavigationMenu>
                 <NavigationMenuList className="flex gap-6 flex-wrap items-center justify-center">
                     <NavigationMenuItem>
-                        <NavigationMenuLink href="#" className={`p-2 hover:text-accent ${inViewElement === 'hero' ? 'bg-secondary border-border border' : ''}`}>
+                        <NavigationMenuLink href="#" className={`p-2  hover:text-accent rounded-md ${inViewElement === 'hero' ? 'bg-border' : ''}`}>
                             Home
                         </NavigationMenuLink>
                     </NavigationMenuItem>
                     <NavigationMenuItem>
-                        {/* <NavigationMenuLink href="#about" className={`p-2 hover:text-accent ${aboutInView ? 'text-blue-500' : 'text-red-500'}`}> */}
-                        <NavigationMenuLink
-                            href="#about"
-                            className={`p-2 hover:text-accent ${inViewElement === 'about' ? 'bg-secondary border-border border' : ''}`}
-                        >
+                        <NavigationMenuLink href="#about" className={`p-2  hover:text-accent rounded-md ${inViewElement === 'about' ? 'bg-border' : ''}`}>
                             About
                         </NavigationMenuLink>
                     </NavigationMenuItem>
                     <NavigationMenuItem>
-                        <NavigationMenuLink
-                            href="#skills"
-                            className={`p-2 hover:text-accent ${inViewElement === 'skills' ? 'bg-secondary border-border border' : ''}`}
-                        >
+                        <NavigationMenuLink href="#skills" className={`p-2  hover:text-accent rounded-md ${inViewElement === 'skills' ? 'bg-border' : ''}`}>
                             Skills
                         </NavigationMenuLink>
                     </NavigationMenuItem>
                     <NavigationMenuItem>
-                        <NavigationMenuLink
-                            href="#projects"
-                            className={`p-2 hover:text-accent ${inViewElement === 'projects' ? 'bg-secondary border-border border' : ''}`}
-                        >
+                        <NavigationMenuLink href="#projects" className={`p-2  hover:text-accent rounded-md ${inViewElement === 'projects' ? 'bg-border' : ''}`}>
                             Projects
                         </NavigationMenuLink>
                     </NavigationMenuItem>
                     <NavigationMenuItem>
-                        <NavigationMenuLink
-                            href="#contact"
-                            className={`p-2 hover:text-accent ${inViewElement === 'contact' ? 'bg-secondary border-border border' : ''}`}
-                        >
+                        <NavigationMenuLink href="#contact" className={`p-2  hover:text-accent rounded-md ${inViewElement === 'contact' ? 'bg-border' : ''}`}>
                             Contact
                         </NavigationMenuLink>
                     </NavigationMenuItem>
