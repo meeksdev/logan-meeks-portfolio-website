@@ -2,20 +2,17 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
+import { useEffect, useState } from 'react';
+import { useInView } from 'react-intersection-observer';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
-
 import { Code, Layers, Wrench, Eye, Github } from 'lucide-react';
 
+import Logo from '@/components/icons/logo';
+import Header from '../header/header';
 import { ContactForm } from '../contactForm/contactForm';
 /* Import Toast */
-
-import { useInView } from 'react-intersection-observer';
-import { useEffect, useState } from 'react';
-import Header from '../header/header';
-
-import Logo from '@/components/icons/logo';
 
 export default function LandingPage() {
     const [inViewElement, setInViewElement] = useState('');
@@ -48,20 +45,6 @@ export default function LandingPage() {
         } else if (contactInView) {
             setInViewElement('contact');
         }
-
-        /* if (contactInView) {
-            setInViewElement('contact');
-        } else if (projectsInView) {
-            setInViewElement('projects');
-        } else if (skillsInView) {
-            setInViewElement('skills');
-        } else if (aboutInView) {
-            setInViewElement('about');
-        } else if (heroInView) {
-            setInViewElement('hero');
-        } */
-
-        // console.log(inViewElement);
     }, [heroInView, aboutInView, skillsInView, projectsInView, contactInView]);
 
     return (
