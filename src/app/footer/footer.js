@@ -9,7 +9,7 @@ export default function Footer() {
                 <div className="flex sm:mx-0 items-start pb-3">
                     <Image className="overflow-hidden z-0 w-12" src="/Symbol-Light.svg" alt="Picture of Logan Meeks" width={40} height={40} />
                     <div className="float-right">
-                        <h1 className="text-xl font-semibold text-foreground">Logan Meeks</h1>
+                        <h1 className="text-xl font-semibold text-foreground leading-6">Logan Meeks</h1>
                         <span className="bg-foreground text-background px-1 text-sm font-semibold">Web Development</span>
                     </div>
                 </div>

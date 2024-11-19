@@ -68,7 +68,7 @@ export default function LandingPage() {
             <main>
                 {/* Hero Section */}
                 <section id="hero" ref={heroRef} className="relative flex bg-secondary justify-center items-center overflow-hidden border-b">
-                    <div className="w-full h-full flex-1 sm:flex justify-end items-center hidden">
+                    <div className="w-full h-full flex-1 flex justify-end items-center">
                         <div className="w-fit h-fit flex justify-center items-center">
                             <svg
                                 className="absolute overflow-hidden z-0 -translate-x-36"
@@ -90,11 +90,9 @@ export default function LandingPage() {
                         </div>
                     </div>
 
-                    <div className="w-full sm:px-16 py-40 z-10 flex-[1.5] px-0 sm:block flex flex-col items-center sm:text-left text-center">
+                    <div className="w-full px-16 py-40 z-10 flex-[1.5]">
                         <h1 className="w-fit text-5xl font-bold leading-tight">
-                            Hi, I'm Logan<span className="sm:hidden">.</span>
-                            <span className="hidden sm:inline"> Meeks. </span>
-                            <br /> <span className="font-normal text-3xl sm:font-bold sm:text-5xl">I'm a full stack developer.</span>
+                            Hi, I'm Logan Meeks. <br /> I'm a full stack developer.
                         </h1>
                         <Button asChild className="w-fit mt-2">
                             <Link href="#contact">Contact Me</Link>
@@ -102,12 +100,10 @@ export default function LandingPage() {
                     </div>
                 </section>
 
-                <Image className="w-full max-w-lg" src="/pup-n-me.jpg" alt="Picture of Logan Meeks" width={400} height={400} />
-
                 {/* About Me Section */}
-                <section id="about" ref={aboutRef} className="sm:px-16 py-24 px-6">
+                <section id="about" ref={aboutRef} className="px-16 py-24">
                     <h2 className="text-2xl font-medium mb-12">About Me</h2>
-                    <section className="flex flex-wrap gap-12 justify-between">
+                    <section className="flex gap-12 justify-between">
                         <div className="flex flex-col justify-between w-full">
                             <p>Lorem Ipsum Dolor Sit Amet...</p>
                             <div className="flex gap-4 w-72">
@@ -122,9 +118,9 @@ export default function LandingPage() {
                 </section>
 
                 {/* Skills Section */}
-                <section id="skills" ref={skillsRef} className="sm:px-16 py-24 visible:bg-red-500 px-6">
+                <section id="skills" ref={skillsRef} className="px-16 py-24 visible:bg-red-500">
                     <h2 className="text-2xl font-medium mb-12">Skills</h2>
-                    <section className="flex flex-wrap gap-12">
+                    <section className="flex gap-12">
                         <Card className="w-full flex gap-6 p-6">
                             <CardHeader className="p-0">
                                 <Code size={32} className="mr-2 text-primary" />
@@ -159,9 +155,9 @@ export default function LandingPage() {
                 </section>
 
                 {/* Projects Section */}
-                <section id="projects" ref={projectsRef} className="sm:px-16 py-24 px-6">
+                <section id="projects" ref={projectsRef} className="px-16 py-24">
                     <h2 className="text-2xl font-medium mb-12">Projects</h2>
-                    <section className="flex flex-wrap gap-12">
+                    <section className="flex gap-12">
                         <Card className="flex flex-col w-full">
                             <CardHeader className="h-full flex flex-col justify-center">
                                 <Image
@@ -228,7 +224,7 @@ export default function LandingPage() {
                 </section>
 
                 {/* Contact Section */}
-                <section id="contact" ref={contactRef} className="sm:px-16 py-24 px-6">
+                <section id="contact" ref={contactRef} className="px-16 py-24">
                     <h2 className="text-2xl font-medium mb-12">Contact</h2>
                     <ContactForm />
                 </section>
