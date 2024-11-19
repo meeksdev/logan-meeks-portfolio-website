@@ -15,6 +15,8 @@ import { useInView } from 'react-intersection-observer';
 import { useEffect, useState } from 'react';
 import Header from '../header/header';
 
+import Logo from '@/components/icons/logo';
+
 export default function LandingPage() {
     const [inViewElement, setInViewElement] = useState('');
     const threshold = 1;
@@ -68,10 +70,10 @@ export default function LandingPage() {
             <main>
                 {/* Hero Section */}
                 <section id="hero" ref={heroRef} className="relative flex bg-secondary justify-center items-center overflow-hidden border-b">
-                    <div className="w-full h-full flex-1 sm:flex justify-end items-center hidden">
+                    <div className="w-full h-full flex-[0] sm:flex-1 sm:flex justify-end items-center">
                         <div className="w-fit h-fit flex justify-center items-center">
                             <svg
-                                className="absolute overflow-hidden z-0 -translate-x-36"
+                                className="absolute overflow-hidden z-0 -translate-x-36 hidden sm:block"
                                 width="639"
                                 height="858"
                                 viewBox="0 0 639 858"
@@ -80,29 +82,33 @@ export default function LandingPage() {
                             >
                                 <path d="M528.876 63.5964L110 795.068M528.876 63.5964L110 795.068" stroke="hsl(200 21% 8%)" strokeWidth="250" />
                             </svg>
-                            <Image
+                            <Logo
+                                variant="hero"
+                                className="absolute sm:left-auto left-1/2 -translate-x-1/2 overflow-hidden z-0 size-[500] sm:size-60 sm:-translate-x-32 center"
+                            />
+                            {/* <Image
                                 className="absolute overflow-hidden z-0 w-60 -translate-x-32"
                                 src="/Symbol-Light.svg"
                                 alt="Picture of Logan Meeks"
                                 width={225}
                                 height={225}
-                            />
+                            /> */}
                         </div>
                     </div>
 
                     <div className="w-full sm:px-16 py-40 z-10 flex-[1.5] px-0 sm:block flex flex-col items-center sm:text-left text-center">
-                        <h1 className="w-fit text-5xl font-bold leading-tight">
-                            Hi, I'm Logan<span className="sm:hidden">.</span>
-                            <span className="hidden sm:inline"> Meeks. </span>
-                            <br /> <span className="font-normal text-3xl sm:font-bold sm:text-5xl">I'm a full stack developer.</span>
+                        <h1 className="w-fit text-5xl font-bold leading-10 md:leading-tight">
+                            Hi, I'm Logan<span className="md:hidden">.</span>
+                            <span className="hidden md:inline"> Meeks. </span>
+                            <br /> <span className="font-normal text-3xl md:font-bold md:text-5xl">I'm a full stack developer.</span>
                         </h1>
-                        <Button asChild className="w-fit mt-2">
+                        <Button asChild className="w-fit mt-8 sm:mt-2">
                             <Link href="#contact">Contact Me</Link>
                         </Button>
                     </div>
                 </section>
 
-                <Image className="w-full max-w-lg" src="/pup-n-me.jpg" alt="Picture of Logan Meeks" width={400} height={400} />
+                <Image className="w-full" src="/pup-n-me.jpg" alt="Picture of Logan Meeks" width={400} height={400} />
 
                 {/* About Me Section */}
                 <section id="about" ref={aboutRef} className="sm:px-16 py-24 px-6">

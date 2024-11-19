@@ -13,14 +13,17 @@ import { Drawer, DrawerClose, DrawerContent, DrawerDescription, DrawerFooter, Dr
 
 import { Menu, X } from 'lucide-react';
 
+import Image from 'next/image';
+
 export default function Header({ inViewElement }) {
     return (
         <>
-            <header className="sticky top-0 z-50 flex items-center justify-end bg-background border-b p-8 sm:hidden">
+            <header className="sticky top-0 z-50 flex items-center justify-between bg-background border-b p-6 sm:hidden">
+                <Image className="overflow-hidden z-0 w-12" src="/Symbol-Light.svg" alt="Picture of Logan Meeks" width={40} height={40} />
                 <NavigationMenu>
                     <Drawer direction="top">
                         <DrawerTrigger>
-                            <Menu />
+                            <Menu size={36} />
                         </DrawerTrigger>
                         <DrawerContent>
                             <DrawerTitle className="pt-8 text-center">

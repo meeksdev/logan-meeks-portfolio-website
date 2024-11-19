@@ -43,9 +43,9 @@ const DrawerContent = React.forwardRef(({ className, children, ...props }, ref) 
                 )}
                 {...props}
             >
-                {(!direction || direction === 'bottom') && <div className="mx-auto mt-4 h-2 w-[100px] rounded-full bg-muted" />}
+                {(!direction || direction === 'bottom') && <div className="mx-auto mt-4 h-2 w-[100px] rounded-full bg-border" />}
                 {children}
-                {direction === 'top' && <div className="mx-auto mb-4 h-2 w-[100px] rounded-full bg-muted" />}
+                {direction === 'top' && <div className="mx-auto mb-4 h-2 w-[100px] rounded-full bg-border" />}
             </DrawerPrimitive.Content>
         </DrawerPortal>
     );
