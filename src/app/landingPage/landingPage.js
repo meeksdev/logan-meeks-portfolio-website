@@ -108,12 +108,12 @@ export default function LandingPage() {
                     </div>
                 </section>
 
-                <Image className="w-full" src="/pup-n-me.jpg" alt="Picture of Logan Meeks" width={400} height={400} />
+                <Image className="w-full sm:hidden" src="/pup-n-me.jpg" alt="Picture of Logan Meeks" width={400} height={400} />
 
                 {/* About Me Section */}
                 <section id="about" ref={aboutRef} className="sm:px-16 py-24 px-6">
                     <h2 className="text-2xl font-medium mb-12">About Me</h2>
-                    <section className="flex flex-wrap gap-12 justify-between">
+                    <section className="flex gap-12 justify-between">
                         <div className="flex flex-col justify-between w-full">
                             <p>Lorem Ipsum Dolor Sit Amet...</p>
                             <div className="flex gap-4 w-72">
@@ -123,15 +123,22 @@ export default function LandingPage() {
                                 <Button className="w-full">Contact Me</Button>
                             </div>
                         </div>
-                        <Image className="w-full max-w-lg" src="/pup-n-me.jpg" alt="Picture of Logan Meeks" width={400} height={400} />
+                        <div className="w-full max-w-lg sm:block hidden relative aspect-square">
+                            <Image
+                                /* className="w-full max-w-lg sm:block hidden" */ src="/pup-n-me.jpg"
+                                alt="Picture of Logan Meeks"
+                                layout="fill"
+                                objectFit="cover"
+                            />
+                        </div>
                     </section>
                 </section>
 
                 {/* Skills Section */}
                 <section id="skills" ref={skillsRef} className="sm:px-16 py-24 visible:bg-red-500 px-6">
                     <h2 className="text-2xl font-medium mb-12">Skills</h2>
-                    <section className="flex flex-wrap gap-12">
-                        <Card className="w-full flex gap-6 p-6">
+                    <section className="flex flex-wrap gap-6 sm:gap-12">
+                        <Card className="flex flex-[1] min-w-64 gap-6 p-6">
                             <CardHeader className="p-0">
                                 <Code size={32} className="mr-2 text-primary" />
                             </CardHeader>
@@ -141,7 +148,7 @@ export default function LandingPage() {
                                 <p className="opacity-70">Language 2</p>
                             </CardContent>
                         </Card>
-                        <Card className="w-full flex gap-6 p-6">
+                        <Card className="flex flex-[1] min-w-64 gap-6 p-6">
                             <CardHeader className="p-0">
                                 <Layers size={32} className="mr-2 text-primary" />
                             </CardHeader>
@@ -151,7 +158,7 @@ export default function LandingPage() {
                                 <p className="opacity-70">Language 2</p>
                             </CardContent>
                         </Card>
-                        <Card className="w-full flex gap-6 p-6">
+                        <Card className="flex flex-[1] min-w-64 gap-6 p-6">
                             <CardHeader className="p-0">
                                 <Wrench size={32} className="mr-2 text-primary" />
                             </CardHeader>
@@ -167,8 +174,8 @@ export default function LandingPage() {
                 {/* Projects Section */}
                 <section id="projects" ref={projectsRef} className="sm:px-16 py-24 px-6">
                     <h2 className="text-2xl font-medium mb-12">Projects</h2>
-                    <section className="flex flex-wrap gap-12">
-                        <Card className="flex flex-col w-full">
+                    <section className="flex flex-wrap gap-6 sm:gap-12">
+                        <Card className="flex flex-col flex-[1] sm:min-w-96">
                             <CardHeader className="h-full flex flex-col justify-center">
                                 <Image
                                     className="w-full aspect-video object-cover overflow-hidden"
@@ -197,7 +204,7 @@ export default function LandingPage() {
                                 </Button>
                             </CardFooter>
                         </Card>
-                        <Card className="flex flex-col w-full">
+                        <Card className="flex flex-col flex-[1] sm:min-w-96">
                             <CardHeader className="h-full flex flex-col justify-center">
                                 <Image
                                     className="w-full aspect-video object-cover overflow-hidden"

@@ -41,9 +41,9 @@ export function ContactForm() {
 
     return (
         <Form {...form}>
-            <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
-                <div className="flex w-full gap-6">
-                    <div className="w-full">
+            <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8 p-6 border rounded-md">
+                <div className="flex flex-wrap w-full gap-6">
+                    <div className="flex-[1] min-w-48">
                         <FormField
                             control={form.control}
                             name="name"
@@ -59,7 +59,7 @@ export function ContactForm() {
                             )}
                         />
                     </div>
-                    <div className="w-full">
+                    <div className="flex-[1] min-w-48">
                         <FormField
                             control={form.control}
                             name="email"
