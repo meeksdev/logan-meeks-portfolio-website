@@ -8,6 +8,9 @@ import { Button } from '@/components/ui/button';
 import { Form, FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
+import { useToast } from '@/hooks/use-toast';
+
+import emailjs from '@emailjs/browser';
 
 const formSchema = z.object({
     name: z.string().min(2, {
@@ -22,6 +25,8 @@ const formSchema = z.object({
 });
 
 export function ContactForm() {
+    const { toast } = useToast();
+
     // 1. Define your form.
     const form = useForm({
         resolver: zodResolver(formSchema),
@@ -36,7 +41,20 @@ export function ContactForm() {
     function onSubmit(values) {
         // Do something with the form values.
         // ✅ This will be type-safe and validated.
-        console.log(values);
+
+        emailjs.send('contact-me-service', 'contact-me-form', values, { publicKey: 'VWBEw-ZfWtOWTBsxF' }).then(
+            () => {
+                console.log('Message sucessfully sent!');
+                form.reset();
+                // alert('Message Sent!');
+                toast({ description: 'Message sucessfully sent!' });
+            },
+            error => {
+                console.log('FAILED...', error.text);
+                // alert('Message failed to send.');
+                toast({ description: 'Message failed to send.', variant: 'destructive' });
+            }
+        );
     }
 
     return (

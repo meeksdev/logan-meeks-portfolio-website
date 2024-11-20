@@ -12,7 +12,6 @@ import { Code, Layers, Wrench, Eye, Github } from 'lucide-react';
 import Logo from '@/components/icons/logo';
 import Header from '../header/header';
 import { ContactForm } from '../contactForm/contactForm';
-/* Import Toast */
 
 function Projects() {
     const projects = [
@@ -189,7 +188,7 @@ export default function LandingPage() {
                                 </p>
                             </div>
                             <div className="flex gap-4 w-72">
-                                <Button variant="secondary" className="w-full">
+                                <Button variant="secondary" disabled className="w-full border-none" /* className="w-full" */>
                                     Resume
                                 </Button>
                                 <Button className="w-full">Contact Me</Button>
