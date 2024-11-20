@@ -42,7 +42,7 @@ export function ContactForm() {
         // Do something with the form values.
         // ✅ This will be type-safe and validated.
 
-        emailjs.send('contact-me-service', 'contact-me-form', values, { publicKey: 'VWBEw-ZfWtOWTBsxF' }).then(
+        emailjs.send('contact-me-service', 'contact-me-form', values, { publicKey: process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY }).then(
             () => {
                 console.log('Message sucessfully sent!');
                 form.reset();

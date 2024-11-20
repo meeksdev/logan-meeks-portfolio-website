@@ -33,9 +33,7 @@ export default function Footer() {
                     +1 (702) 521-7541
                 </Link>
             </section>
-            <section>
-                <h1 className="font-bold pb-3 sm:pb-7">Social Media</h1>
-            </section>
+            <section>{/* <h1 className="font-bold pb-3 sm:pb-7">Social Media</h1> */}</section>
         </footer>
     );
 }
