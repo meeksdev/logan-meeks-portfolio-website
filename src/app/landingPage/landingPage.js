@@ -14,6 +14,92 @@ import Header from '../header/header';
 import { ContactForm } from '../contactForm/contactForm';
 /* Import Toast */
 
+function Projects() {
+    const projects = [
+        {
+            title: 'Veterinary Chrome Extension',
+            description:
+                'A Chrome extension for veterinary practices that gathers information from client form submissions and automates various administrative tasks.',
+            badges: ['Javascript', 'HTML', 'CSS', 'Third-Party APIs'],
+            // demoURL: 'https://www.google.com',
+            codeURL: 'https://github.com/meeksdev/autofill-extension',
+            imageURL: '/veterinary-chrome-extension.gif',
+            imageAlt: 'Portfolio Project',
+        },
+        {
+            title: 'Embedded Firearm System',
+            description:
+                'A high-performance embedded system and circuitry for firearms using embedded C/C++ and ARM microcontrollers, achieving sub-second response times.',
+            badges: ['C++', 'Arduino'],
+            imageURL: '/wraithworks.jpg',
+            imageAlt: 'Portfolio Project',
+        },
+    ];
+
+    return (
+        <section className="flex flex-wrap gap-6 sm:gap-12">
+            {projects.map((project, projectIndex) => (
+                <Card key={projectIndex} className="flex flex-col flex-[1] sm:min-w-96">
+                    <CardHeader className="h-full flex flex-col justify-center">
+                        <div className="relative w-full aspect-video">
+                            <Image src={project.imageURL} alt={project.imageAlt} layout="fill" objectFit="cover" />
+                        </div>
+                        <div className="flex flex-wrap justify-center gap-1">
+                            {project.badges.map((badge, badgeIndex) => (
+                                <Badge key={badgeIndex} variant="secondary" className="font-light">
+                                    {badge}
+                                </Badge>
+                            ))}
+                        </div>
+                    </CardHeader>
+                    <CardContent className="flex flex-col gap-2 text-center">
+                        <CardTitle>{project.title}</CardTitle>
+                        <CardDescription>{project.description}</CardDescription>
+                    </CardContent>
+                    <CardFooter className="justify-center gap-4">
+                        <Button
+                            disabled={!project.demoURL}
+                            variant="secondary"
+                            className={`w-full ${!project.demoURL && 'border-none hover:bg-secondary pointer-events-none'}`}
+                            asChild={!!project.demoURL}
+                        >
+                            {project.demoURL ? (
+                                <Link href={project.demoURL}>
+                                    <Eye />
+                                    Demo
+                                </Link>
+                            ) : (
+                                <>
+                                    <Eye />
+                                    Demo
+                                </>
+                            )}
+                        </Button>
+                        <Button
+                            disabled={!project.codeURL}
+                            variant="secondary"
+                            className={`w-full ${!project.codeURL && 'border-none hover:bg-secondary pointer-events-none'}`}
+                            asChild={!!project.codeURL}
+                        >
+                            {project.codeURL ? (
+                                <Link href={project.codeURL}>
+                                    <Github />
+                                    Code
+                                </Link>
+                            ) : (
+                                <>
+                                    <Github />
+                                    Code
+                                </>
+                            )}
+                        </Button>
+                    </CardFooter>
+                </Card>
+            ))}
+        </section>
+    );
+}
+
 export default function LandingPage() {
     const [inViewElement, setInViewElement] = useState('');
     const threshold = 1;
@@ -69,13 +155,6 @@ export default function LandingPage() {
                                 variant="hero"
                                 className="absolute sm:left-auto left-1/2 -translate-x-1/2 overflow-hidden z-0 size-[500] sm:size-60 sm:-translate-x-32 center"
                             />
-                            {/* <Image
-                                className="absolute overflow-hidden z-0 w-60 -translate-x-32"
-                                src="/Symbol-Light.svg"
-                                alt="Picture of Logan Meeks"
-                                width={225}
-                                height={225}
-                            /> */}
                         </div>
                     </div>
 
@@ -97,8 +176,18 @@ export default function LandingPage() {
                 <section id="about" ref={aboutRef} className="sm:px-16 py-24 px-6">
                     <h2 className="text-2xl font-medium mb-12">About Me</h2>
                     <section className="flex gap-12 justify-between">
-                        <div className="flex flex-col justify-between w-full">
-                            <p>Lorem Ipsum Dolor Sit Amet...</p>
+                        <div className="flex flex-col w-full">
+                            <div>
+                                <p className="pb-4 text-muted-foreground">
+                                    After earning a degree in Mechanical Engineering and working in the field for four years, I made a bold career shift into
+                                    software development. In 2024, I completed Codecademy's full-stack engineering program, accelerating my growth and opening
+                                    doors to independent contracting opportunities.
+                                </p>
+                                <p className="pb-4  text-muted-foreground">
+                                    When I'm not coding, I enjoy hitting the gym, playing golf, taking my dog to the park, or experimenting with new recipes in
+                                    the kitchen.
+                                </p>
+                            </div>
                             <div className="flex gap-4 w-72">
                                 <Button variant="secondary" className="w-full">
                                     Resume
@@ -127,8 +216,11 @@ export default function LandingPage() {
                             </CardHeader>
                             <CardContent className="p-0">
                                 <CardTitle className="text-2xl mb-2 font-normal">Languages</CardTitle>
-                                <p className="opacity-70">Language 1</p>
-                                <p className="opacity-70">Language 2</p>
+                                <p className="opacity-70">Javascript</p>
+                                <p className="opacity-70">C++</p>
+                                <p className="opacity-70">HTML</p>
+                                <p className="opacity-70">CSS</p>
+                                <p className="opacity-70">Python</p>
                             </CardContent>
                         </Card>
                         <Card className="flex flex-[1] min-w-64 gap-6 p-6">
@@ -137,8 +229,13 @@ export default function LandingPage() {
                             </CardHeader>
                             <CardContent className="p-0">
                                 <CardTitle className="text-2xl mb-2 font-normal">Frameworks</CardTitle>
-                                <p className="opacity-70">Language 1</p>
-                                <p className="opacity-70">Language 2</p>
+                                <p className="opacity-70">React</p>
+                                <p className="opacity-70">Next.js</p>
+                                <p className="opacity-70">Tailwind CSS</p>
+                                <p className="opacity-70">Shadcn/ui</p>
+                                <p className="opacity-70">Node.js</p>
+                                <p className="opacity-70">Express</p>
+                                <p className="opacity-70">PostgreSQL</p>
                             </CardContent>
                         </Card>
                         <Card className="flex flex-[1] min-w-64 gap-6 p-6">
@@ -147,8 +244,9 @@ export default function LandingPage() {
                             </CardHeader>
                             <CardContent className="p-0">
                                 <CardTitle className="text-2xl mb-2 font-normal">Tools</CardTitle>
-                                <p className="opacity-70">Language 1</p>
-                                <p className="opacity-70">Language 2</p>
+                                <p className="opacity-70">Git</p>
+                                <p className="opacity-70">Github</p>
+                                <p className="opacity-70">Arduino</p>
                             </CardContent>
                         </Card>
                     </section>
@@ -157,70 +255,7 @@ export default function LandingPage() {
                 {/* Projects Section */}
                 <section id="projects" ref={projectsRef} className="sm:px-16 py-24 px-6">
                     <h2 className="text-2xl font-medium mb-12">Projects</h2>
-                    <section className="flex flex-wrap gap-6 sm:gap-12">
-                        <Card className="flex flex-col flex-[1] sm:min-w-96">
-                            <CardHeader className="h-full flex flex-col justify-center">
-                                <Image
-                                    className="w-full aspect-video object-cover overflow-hidden"
-                                    src="/pup-n-me.jpg"
-                                    alt="Portfolio Project"
-                                    width={400}
-                                    height={400}
-                                />
-                                <div className="flex justify-center gap-1">
-                                    <Badge variant="default">Badge1</Badge>
-                                    <Badge variant="default">Badge2</Badge>
-                                </div>
-                            </CardHeader>
-                            <CardContent className="flex-col text-center">
-                                <CardTitle>Card Title</CardTitle>
-                                <CardDescription>Card Description</CardDescription>
-                            </CardContent>
-                            <CardFooter className="justify-center gap-4">
-                                <Button variant="secondary" className="w-full">
-                                    <Eye />
-                                    Demo
-                                </Button>
-                                <Button variant="secondary" className="w-full">
-                                    <Github />
-                                    Code
-                                </Button>
-                            </CardFooter>
-                        </Card>
-                        <Card className="flex flex-col flex-[1] sm:min-w-96">
-                            <CardHeader className="h-full flex flex-col justify-center">
-                                <Image
-                                    className="w-full aspect-video object-cover overflow-hidden"
-                                    src="/pup-n-me.jpg"
-                                    alt="Portfolio Project"
-                                    width={400}
-                                    height={400}
-                                />
-                                <div className="flex justify-center gap-1">
-                                    <Badge variant="outline" className="font-normal text-muted-foreground">
-                                        Badge1
-                                    </Badge>
-                                    <Badge variant="outline" className="font-normal text-muted-foreground">
-                                        Badge2
-                                    </Badge>
-                                </div>
-                            </CardHeader>
-                            <CardContent className="flex-col text-center">
-                                <CardTitle>Card Title</CardTitle>
-                                <CardDescription>Card Description</CardDescription>
-                            </CardContent>
-                            <CardFooter className="justify-center gap-4">
-                                <Button variant="secondary" className="w-full">
-                                    <Eye />
-                                    Demo
-                                </Button>
-                                <Button variant="secondary" className="w-full">
-                                    <Github />
-                                    Code
-                                </Button>
-                            </CardFooter>
-                        </Card>
-                    </section>
+                    <Projects />
                 </section>
 
                 {/* Contact Section */}
