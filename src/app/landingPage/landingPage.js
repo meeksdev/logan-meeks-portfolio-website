@@ -159,9 +159,9 @@ export default function LandingPage() {
 
                     <div className="w-full sm:px-16 py-40 z-10 flex-[1.5] px-0 sm:block flex flex-col items-center sm:text-left text-center">
                         <h1 className="w-fit text-5xl font-bold leading-10 md:leading-tight">
-                            Hi, I'm Logan<span className="md:hidden">.</span>
+                            Hi, I&apos;m Logan<span className="md:hidden">.</span>
                             <span className="hidden md:inline"> Meeks. </span>
-                            <br /> <span className="font-normal text-3xl md:font-bold md:text-5xl">I'm a full stack developer.</span>
+                            <br /> <span className="font-normal text-3xl md:font-bold md:text-5xl">I&apos;m a full stack developer.</span>
                         </h1>
                         <Button asChild className="w-fit mt-8 sm:mt-2">
                             <Link href="#contact">Contact Me</Link>
@@ -179,12 +179,12 @@ export default function LandingPage() {
                             <div>
                                 <p className="pb-4 text-muted-foreground">
                                     After earning a degree in Mechanical Engineering and working in the field for four years, I made a bold career shift into
-                                    software development. In 2024, I completed Codecademy's full-stack engineering program, accelerating my growth and opening
-                                    doors to independent contracting opportunities.
+                                    software development. In 2024, I completed Codecademy&apos;s full-stack engineering program, accelerating my growth and
+                                    opening doors to independent contracting opportunities.
                                 </p>
                                 <p className="pb-4  text-muted-foreground">
-                                    When I'm not coding, I enjoy hitting the gym, playing golf, taking my dog to the park, or experimenting with new recipes in
-                                    the kitchen.
+                                    When I&apos;m not coding, I enjoy hitting the gym, playing golf, taking my dog to the park, or experimenting with new
+                                    recipes in the kitchen.
                                 </p>
                             </div>
                             <div className="flex gap-4 w-72">
