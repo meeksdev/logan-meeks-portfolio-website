@@ -48,7 +48,7 @@ function MyNavigationMenuList({ inViewElement, className = '' }) {
 export default function Header({ inViewElement }) {
     return (
         <>
-            <header className="sticky top-0 z-50 flex items-center justify-between sm:justify-center bg-background border-b p-6">
+            <header className="sticky top-0 z-50 flex items-center justify-between sm:justify-center bg-background border-b px-6 py-4 sm:py-6">
                 <Image className="overflow-hidden z-0 w-12 sm:hidden" src="/Symbol-Light.svg" alt="Picture of Logan Meeks" width={48} height={48} />
                 <NavigationMenu>
                     <MyNavigationMenuList inViewElement={inViewElement} className="sm:gap-6 gap-0 flex-wrap items-center justify-center sm:flex hidden" />

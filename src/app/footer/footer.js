@@ -17,7 +17,7 @@ export default function Footer() {
                     <Link href="https://www.linkedin.com/company/meeksdev" rel="noopener noreferrer" title="Linked In" className="hover:text-accent">
                         <Linkedin />
                     </Link>
-                    <Link href="https://www.linkedin.com/company/meeksdev" rel="noopener noreferrer" title="Linked In" className="hover:text-accent">
+                    <Link href="https://github.com/meeksdev" rel="noopener noreferrer" title="Linked In" className="hover:text-accent">
                         <Github />
                     </Link>
                 </div>

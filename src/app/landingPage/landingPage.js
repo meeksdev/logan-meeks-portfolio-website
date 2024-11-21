@@ -187,11 +187,13 @@ export default function LandingPage() {
                                     recipes in the kitchen.
                                 </p>
                             </div>
-                            <div className="flex gap-4 w-72">
+                            <div className="flex gap-4 w-full sm:w-72">
                                 <Button variant="secondary" disabled className="w-full border-none" /* className="w-full" */>
                                     Resume
                                 </Button>
-                                <Button className="w-full">Contact Me</Button>
+                                <Button asChild className="w-full">
+                                    <Link href="#contact">Contact Me</Link>
+                                </Button>
                             </div>
                         </div>
                         <div className="w-full max-w-lg sm:block hidden relative aspect-square">
