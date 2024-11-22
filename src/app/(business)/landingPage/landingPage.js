@@ -7,7 +7,8 @@ import { useInView } from 'react-intersection-observer';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
-import { Code, Layers, Wrench, Eye, Github } from 'lucide-react';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
+import { Code, Layers, Wrench, Eye, Github, Star } from 'lucide-react';
 
 import Logo from '@/components/icons/logo';
 import Header from '../header/header';
@@ -44,14 +45,14 @@ const projects = [
         imageURL: '/projects/wraithworks.jpg',
         imageAlt: 'Embedded Firearm System',
     },
-    {
+    /* {
         title: 'Portfolio Website',
         description: 'My portfolio website using React, Next.js, TailwindCSS, and Shadcn components.',
         badges: ['React', 'Next.js', 'Tailwind CSS', 'Shadcn/ui'],
         codeURL: 'https://github.com/meeksdev/logan-meeks-portfolio-website',
         imageURL: '/projects/portfolio-site.jpg',
         imageAlt: 'Portfolio Website',
-    },
+    }, */
 ];
 
 function Projects() {
@@ -152,6 +153,12 @@ export default function LandingPage() {
         }
     }, [heroInView, aboutInView, skillsInView, projectsInView, contactInView]);
 
+    function ReviewStars({ rating }) {
+        const validRating = Math.min(Math.max(rating, 1), 5); // Ensure the rating is between 1 and 5
+
+        return Array.from({ length: validRating }, (_, index) => <Star key={index} className="size-6" />);
+    }
+
     return (
         <>
             <Header inViewElement={inViewElement} />
@@ -185,52 +192,149 @@ export default function LandingPage() {
                                 goals.
                             </p>
                             <Button asChild className="w-fit mt-4">
-                                <Link href="#contact">Contact Me</Link>
+                                <Link href="#contact">Contact Us</Link>
                             </Button>
                         </div>
                     </div>
                 </section>
 
-                <Image className="w-full md:hidden" src="/pup-n-me.jpg" alt="Picture of Logan Meeks" width={400} height={400} />
+                {/* <Image className="w-full md:hidden" src="/pup-n-me.jpg" alt="Picture of Logan Meeks" width={400} height={400} /> */}
 
-                {/* About Me Section */}
+                {/* About Us Section */}
                 <section id="about" ref={aboutRef} className="sm:px-16 py-24 px-6 max-w-screen-xl mx-auto">
-                    <h2 className="text-2xl font-medium mb-12">About Me</h2>
+                    <h2 className="text-2xl font-medium mb-12">About Us</h2>
                     <section className="flex gap-12 justify-between">
                         <div className="flex flex-col w-full">
                             <div>
                                 <p className="pb-4 text-muted-foreground">
-                                    After earning a degree in Mechanical Engineering and working in the field for four years, I made a bold career shift into
-                                    software development. In 2024, I completed Codecademy&apos;s full-stack engineering program, accelerating my growth and
-                                    opening doors to independent contracting opportunities.
+                                    Welcome to Logan Meeks Web Development - where innovation meets creativity to craft exceptional digital experiences.
+                                    We&apos;re passionate about leveraging cutting-edge technology to bring your vision to life. With a keen eye for design and
+                                    a relentless pursuit of perfection, we specialize in creating bespoke websites that not only captivate audiences but also
+                                    drive results.
                                 </p>
-                                <p className="pb-4  text-muted-foreground">
-                                    When I&apos;m not coding, I enjoy hitting the gym, playing golf, taking my dog to the park, or experimenting with new
-                                    recipes in the kitchen.
+                                <p className="pb-4 text-muted-foreground">
+                                    We thrive on challenges and are dedicated to pushing the boundaries of web development to deliver solutions that exceed
+                                    expectations.{' '}
                                 </p>
+                                <p className="pb-4 text-muted-foreground">
+                                    What truly sets us apart is our unwavering dedication to our clients. We believe that collaboration is key to success, which
+                                    is why we work closely with you every step of the way to ensure that your project is a true reflection of your vision and
+                                    goals.{' '}
+                                </p>
+                                <p className="pb-4 text-muted-foreground">
+                                    Whether you&apos;re a small business looking to establish your online presence or a large corporation seeking to redefine
+                                    it, we&apos;re here to help. Let&apos;s embark on this journey together and transform your digital aspirations into reality.
+                                </p>
+                                <p className="pb-4 text-muted-foreground">Get in touch with us today and let&apos;s create something extraordinary.</p>
                             </div>
-                            <div className="flex gap-4 w-full sm:w-72">
-                                <Button variant="secondary" disabled className="w-full border-none" /* className="w-full" */>
+                            <div className="flex gap-4 w-full sm:w-36">
+                                {/* <Button variant="secondary" disabled className="w-full border-none">
                                     Resume
-                                </Button>
+                                </Button> */}
                                 <Button asChild className="w-full">
-                                    <Link href="#contact">Contact Me</Link>
+                                    <Link href="#contact">Contact Us</Link>
                                 </Button>
                             </div>
                         </div>
-                        <div className="w-full min-w-72 max-w-lg md:block hidden relative aspect-square">
-                            <Image
-                                /* className="w-full max-w-lg sm:block hidden" */ src="/pup-n-me.jpg"
-                                alt="Picture of Logan Meeks"
-                                layout="fill"
-                                objectFit="cover"
-                            />
-                        </div>
+                        {/* <div className="w-full min-w-72 max-w-lg md:block hidden relative aspect-square">
+                            <Image src="/pup-n-me.jpg" alt="Picture of Logan Meeks" layout="fill" objectFit="cover" />
+                        </div> */}
                     </section>
                 </section>
 
-                {/* Skills Section */}
+                {/* Services */}
                 <section id="skills" ref={skillsRef} className="sm:px-16 py-24 visible:bg-red-500 px-6  max-w-screen-xl mx-auto">
+                    <h2 className="text-2xl font-medium mb-12">Services</h2>
+                    <Tabs orientation="vertical" defaultValue="design" className="flex flex-col gap-1 sm:flex-row">
+                        <TabsList className="min-w-[232px] text-center sm:text-left justify-start flex flex-col border">
+                            <TabsTrigger
+                                value="design"
+                                className="border-e-4 border-e-transparent px-4 py-2  hover:cursor-pointer hover:text-accent selected:border-e-4 selected:outline-none"
+                            >
+                                Custom Website Design
+                            </TabsTrigger>
+                            <TabsTrigger
+                                value="development"
+                                className="border-e-4 border-e-transparent px-4 py-2 hover:cursor-pointer hover:text-accent selected:border-e-4 selected:outline-none"
+                            >
+                                Responsive Development
+                            </TabsTrigger>
+                            <TabsTrigger
+                                value="ecommerce"
+                                className="border-e-4 border-e-transparent px-4 py-2 hover:cursor-pointer hover:text-accent selected:border-e-4 selected:outline-none"
+                            >
+                                E-Commerce Solutions
+                            </TabsTrigger>
+                            <TabsTrigger
+                                value="seo"
+                                className="border-e-4 border-e-transparent px-4 py-2 hover:cursor-pointer hover:text-accent selected:border-e-4 selected:outline-none"
+                            >
+                                SEO Optimization
+                            </TabsTrigger>
+                            <TabsTrigger
+                                value="database"
+                                className="border-e-4 border-e-transparent px-4 py-2 hover:cursor-pointer hover:text-accent selected:border-e-4 selected:outline-none"
+                            >
+                                Database Integration
+                            </TabsTrigger>
+                        </TabsList>
+                        <TabsContent value="design" className="w-full border">
+                            <p className="text-center border-b py-1">Tailored websites that captivate your audience and elevate your brand.</p>
+                            <div className="h-full aspect-square max-h-[550px] p-2 mx-auto relative">
+                                <Image
+                                    src="/business/design.svg"
+                                    alt="Illustration of laptop displaying generic website outline."
+                                    layout="fill"
+                                    objectFit="contain"
+                                />
+                            </div>
+                        </TabsContent>
+                        <TabsContent value="development" className="w-full border">
+                            <p className="text-center border-b py-1">Engage users on all devices with seamless, responsive website experiences.</p>
+                            <div className="h-full aspect-square max-h-[550px] p-2 mx-auto relative">
+                                <Image
+                                    src="/business/responsive.svg"
+                                    alt="Illustration of desktop monitor, laptop, tablet, and smart phone."
+                                    layout="fill"
+                                    objectFit="contain"
+                                />
+                            </div>
+                        </TabsContent>
+                        <TabsContent value="ecommerce" className="w-full border">
+                            <p className="text-center border-b py-1">Powerful online stores optimized for maximum sales and conversions.</p>
+                            <div className="h-full aspect-square max-h-[550px] p-2 mx-auto relative">
+                                <Image
+                                    src="/business/ecommerce.svg"
+                                    alt="Illustration of smart phone with marketplace awning overtop and a buy button centered on the screen."
+                                    layout="fill"
+                                    objectFit="contain"
+                                />
+                            </div>
+                        </TabsContent>
+                        <TabsContent value="seo" className="w-full border">
+                            <p className="text-center border-b py-1">Dominate search engine rankings and attract more organic traffic.</p>
+                            <div className="h-full aspect-square max-h-[550px] p-2 mx-auto relative">
+                                <Image
+                                    src="/business/seo.svg"
+                                    alt="Illustration of bar graph and an arrow indicating an upward trend."
+                                    layout="fill"
+                                    objectFit="contain"
+                                />
+                            </div>
+                        </TabsContent>
+                        <TabsContent value="database" className="w-full border">
+                            <p className="text-center border-b py-1">
+                                Streamline your business operations by connecting your website with powerful backend systems.
+                            </p>
+                            <div className="h-full aspect-square max-h-[550px] p-2 mx-auto relative">
+                                <Image src="/business/database.svg" alt="Illustration of database schema." layout="fill" objectFit="contain" />
+                            </div>
+                        </TabsContent>
+                    </Tabs>
+                </section>
+
+                {/* Skills Section */}
+                {/* <section id="skills" ref={skillsRef} className="sm:px-16 py-24 visible:bg-red-500 px-6  max-w-screen-xl mx-auto">
                     <h2 className="text-2xl font-medium mb-12">Skills</h2>
                     <section className="flex flex-wrap justify-center gap-6 sm:gap-12">
                         <Card className="flex flex-1 min-w-64 max-w-md gap-6 p-6">
@@ -273,12 +377,41 @@ export default function LandingPage() {
                             </CardContent>
                         </Card>
                     </section>
-                </section>
+                </section> */}
 
                 {/* Projects Section */}
                 <section id="projects" ref={projectsRef} className="sm:px-16 py-24 px-6  max-w-screen-xl mx-auto">
-                    <h2 className="text-2xl font-medium mb-12">Projects</h2>
+                    <h2 className="text-2xl font-medium mb-12">Recent Projects</h2>
                     <Projects />
+                </section>
+
+                {/* Client Testimonials */}
+                <section className="sm:px-16 py-24 px-6  max-w-screen-xl mx-auto">
+                    <h2 className="text-2xl font-medium mb-12">Client Testimonials</h2>
+                    <div className="flex flex-wrap justify-left gap-2">
+                        {testimonials.map(({ name, position, company, companyURL, rating, testimonial }, index) => {
+                            return (
+                                <section key={index} className="flex min-w-64 max-w-96 flex-1 flex-col justify-between rounded-lg border p-2">
+                                    <div>
+                                        <span className="text-2xl font-bold text-primary">“</span>
+                                        <p className="pb-4 text-justify">{testimonial}</p>
+                                    </div>
+                                    <div>
+                                        <div className="flex justify-center py-3 text-primary">
+                                            <ReviewStars rating={rating} />
+                                        </div>
+                                        <h2 className="text-center font-bold">{name}</h2>
+                                        <h3 className="text-center text-muted-foreground">
+                                            {position},{' '}
+                                            <Link href={companyURL} className="underline text-primary hover:text-accent">
+                                                {company}
+                                            </Link>
+                                        </h3>
+                                    </div>
+                                </section>
+                            );
+                        })}
+                    </div>
                 </section>
 
                 {/* Contact Section */}

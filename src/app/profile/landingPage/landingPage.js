@@ -177,7 +177,7 @@ export default function LandingPage() {
                     </div>
                 </section>
 
-                <Image className="w-full md:hidden" src="/pup-n-me.jpg" alt="Picture of Logan Meeks" width={400} height={400} />
+                <Image className="w-full md:hidden" src="/profile/pup-n-me.jpg" alt="Picture of Logan Meeks" width={400} height={400} />
 
                 {/* About Me Section */}
                 <section id="about" ref={aboutRef} className="sm:px-16 py-24 px-6 max-w-screen-xl mx-auto">
@@ -205,12 +205,7 @@ export default function LandingPage() {
                             </div>
                         </div>
                         <div className="w-full min-w-72 max-w-lg md:block hidden relative aspect-square">
-                            <Image
-                                /* className="w-full max-w-lg sm:block hidden" */ src="/pup-n-me.jpg"
-                                alt="Picture of Logan Meeks"
-                                layout="fill"
-                                objectFit="cover"
-                            />
+                            <Image src="/profile/pup-n-me.jpg" alt="Picture of Logan Meeks" layout="fill" objectFit="cover" />
                         </div>
                     </section>
                 </section>
