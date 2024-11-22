@@ -13,36 +13,36 @@ import Logo from '@/components/icons/logo';
 import Header from '../header/header';
 import { ContactForm } from '../contactForm/contactForm';
 
-function Projects() {
-    const projects = [
-        {
-            title: 'Veterinary Chrome Extension',
-            description:
-                'A Chrome extension for veterinary practices that gathers information from client form submissions and automates various administrative tasks.',
-            badges: ['Javascript', 'HTML', 'CSS', 'Third-Party APIs'],
-            // demoURL: 'https://www.google.com',
-            codeURL: 'https://github.com/meeksdev/autofill-extension',
-            imageURL: '/projects/veterinary-chrome-extension.gif',
-            imageAlt: 'Veterinary Chrome Extension',
-        },
-        {
-            title: 'Embedded Firearm System',
-            description:
-                'A high-performance embedded system and circuitry for firearms using embedded C/C++ and ARM microcontrollers, achieving sub-second response times.',
-            badges: ['C++', 'Arduino'],
-            imageURL: '/projects/wraithworks.jpg',
-            imageAlt: 'Embedded Firearm System',
-        },
-        {
-            title: 'Portfolio Website',
-            description: 'My portfolio website using React, Next.js, TailwindCSS, and Shadcn components.',
-            badges: ['React', 'Next.js', 'Tailwind CSS', 'Shadcn/ui'],
-            codeURL: 'https://github.com/meeksdev/logan-meeks-portfolio-website',
-            imageURL: '/projects/portfolio-site.jpg',
-            imageAlt: 'Portfolio Website',
-        },
-    ];
+const projects = [
+    {
+        title: 'Veterinary Chrome Extension',
+        description:
+            'A Chrome extension for veterinary practices that gathers information from client form submissions and automates various administrative tasks.',
+        badges: ['Javascript', 'HTML', 'CSS', 'Third-Party APIs'],
+        // demoURL: 'https://www.google.com',
+        codeURL: 'https://github.com/meeksdev/autofill-extension',
+        imageURL: '/projects/veterinary-chrome-extension.gif',
+        imageAlt: 'Veterinary Chrome Extension',
+    },
+    {
+        title: 'Embedded Firearm System',
+        description:
+            'A high-performance embedded system and circuitry for firearms using embedded C/C++ and ARM microcontrollers, achieving sub-second response times.',
+        badges: ['C++', 'Arduino'],
+        imageURL: '/projects/wraithworks.jpg',
+        imageAlt: 'Embedded Firearm System',
+    },
+    {
+        title: 'Portfolio Website',
+        description: 'My portfolio website using React, Next.js, TailwindCSS, and Shadcn components.',
+        badges: ['React', 'Next.js', 'Tailwind CSS', 'Shadcn/ui'],
+        codeURL: 'https://github.com/meeksdev/logan-meeks-portfolio-website',
+        imageURL: '/projects/portfolio-site.jpg',
+        imageAlt: 'Portfolio Website',
+    },
+];
 
+function Projects() {
     return (
         <section className="flex flex-wrap justify-center gap-6 sm:gap-12">
             {projects.map((project, projectIndex) => (
@@ -159,7 +159,7 @@ export default function LandingPage() {
                                 <path d="M528.876 63.5964L110 795.068M528.876 63.5964L110 795.068" stroke="hsl(200 21% 8%)" strokeWidth="250" />
                             </svg>
                             <Logo
-                                variant="hero"
+                                variant="profileHero"
                                 className="absolute sm:left-auto left-1/2 -translate-x-1/2 overflow-hidden z-0 size-[500] sm:size-60 sm:-translate-x-32 center"
                             />
                         </div>

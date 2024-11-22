@@ -13,36 +13,48 @@ import Logo from '@/components/icons/logo';
 import Header from '../header/header';
 import { ContactForm } from '../contactForm/contactForm';
 
-function Projects() {
-    const projects = [
-        {
-            title: 'Veterinary Chrome Extension',
-            description:
-                'A Chrome extension for veterinary practices that gathers information from client form submissions and automates various administrative tasks.',
-            badges: ['Javascript', 'HTML', 'CSS', 'Third-Party APIs'],
-            // demoURL: 'https://www.google.com',
-            codeURL: 'https://github.com/meeksdev/autofill-extension',
-            imageURL: '/projects/veterinary-chrome-extension.gif',
-            imageAlt: 'Veterinary Chrome Extension',
-        },
-        {
-            title: 'Embedded Firearm System',
-            description:
-                'A high-performance embedded system and circuitry for firearms using embedded C/C++ and ARM microcontrollers, achieving sub-second response times.',
-            badges: ['C++', 'Arduino'],
-            imageURL: '/projects/wraithworks.jpg',
-            imageAlt: 'Embedded Firearm System',
-        },
-        {
-            title: 'Portfolio Website',
-            description: 'My portfolio website using React, Next.js, TailwindCSS, and Shadcn components.',
-            badges: ['React', 'Next.js', 'Tailwind CSS', 'Shadcn/ui'],
-            codeURL: 'https://github.com/meeksdev/logan-meeks-portfolio-website',
-            imageURL: '/projects/portfolio-site.jpg',
-            imageAlt: 'Portfolio Website',
-        },
-    ];
+const testimonials = [
+    {
+        name: 'Joshua Gore',
+        position: 'Sr. Product Designer',
+        company: 'Wraithworks',
+        companyURL: 'https://wraithworks.com',
+        rating: 5,
+        testimonial:
+            "I was extremely happy with Logan's work, communication, and results. Logan is a self starter who can execute with minimal information to a maximal result. I will be happy to work with him again.",
+    },
+];
 
+const projects = [
+    {
+        title: 'Veterinary Chrome Extension',
+        description:
+            'A Chrome extension for veterinary practices that gathers information from client form submissions and automates various administrative tasks.',
+        badges: ['Javascript', 'HTML', 'CSS', 'Third-Party APIs'],
+        // demoURL: 'https://www.google.com',
+        codeURL: 'https://github.com/meeksdev/autofill-extension',
+        imageURL: '/projects/veterinary-chrome-extension.gif',
+        imageAlt: 'Veterinary Chrome Extension',
+    },
+    {
+        title: 'Embedded Firearm System',
+        description:
+            'A high-performance embedded system and circuitry for firearms using embedded C/C++ and ARM microcontrollers, achieving sub-second response times.',
+        badges: ['C++', 'Arduino'],
+        imageURL: '/projects/wraithworks.jpg',
+        imageAlt: 'Embedded Firearm System',
+    },
+    {
+        title: 'Portfolio Website',
+        description: 'My portfolio website using React, Next.js, TailwindCSS, and Shadcn components.',
+        badges: ['React', 'Next.js', 'Tailwind CSS', 'Shadcn/ui'],
+        codeURL: 'https://github.com/meeksdev/logan-meeks-portfolio-website',
+        imageURL: '/projects/portfolio-site.jpg',
+        imageAlt: 'Portfolio Website',
+    },
+];
+
+function Projects() {
     return (
         <section className="flex flex-wrap justify-center gap-6 sm:gap-12">
             {projects.map((project, projectIndex) => (
@@ -145,35 +157,37 @@ export default function LandingPage() {
             <Header inViewElement={inViewElement} />
             <main>
                 {/* Hero Section */}
-                <section id="hero" ref={heroRef} className="relative flex bg-secondary justify-center items-center overflow-hidden border-b">
-                    <div className="w-full h-full flex-[0] sm:flex-1 sm:flex justify-end items-center">
-                        <div className="w-fit h-fit flex justify-center items-center">
-                            <svg
-                                className="absolute overflow-hidden z-0 -translate-x-36 hidden sm:block"
-                                width="639"
-                                height="858"
-                                viewBox="0 0 639 858"
-                                fill="none"
-                                xmlns="http://www.w3.org/2000/svg"
-                            >
-                                <path d="M528.876 63.5964L110 795.068M528.876 63.5964L110 795.068" stroke="hsl(200 21% 8%)" strokeWidth="250" />
-                            </svg>
-                            <Logo
-                                variant="hero"
-                                className="absolute sm:left-auto left-1/2 -translate-x-1/2 overflow-hidden z-0 size-[500] sm:size-60 sm:-translate-x-32 center"
-                            />
+                <section id="hero" ref={heroRef} className="bg-secondary border-b overflow-hidden">
+                    <div className="relative flex justify-center items-center max-w-screen-xl mx-auto">
+                        <div className="w-full h-full flex-[0] lg:flex-1 lg:flex justify-end items-center">
+                            <div className="w-fit h-fit flex justify-center items-center">
+                                <svg
+                                    className="absolute overflow-hidden z-0 -translate-x-36 hidden lg:block"
+                                    width="639"
+                                    height="858"
+                                    viewBox="0 0 639 858"
+                                    fill="none"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                >
+                                    <path d="M528.876 63.5964L110 795.068M528.876 63.5964L110 795.068" stroke="hsl(200 21% 8%)" strokeWidth="250" />
+                                </svg>
+                                <Logo
+                                    variant="businessHero"
+                                    className="absolute lg:left-auto left-1/2 -translate-x-1/2 overflow-hidden z-0 size-full lg:size-60 lg:-translate-x-32 center"
+                                />
+                            </div>
                         </div>
-                    </div>
 
-                    <div className="w-full sm:px-16 py-40 z-10 flex-[1.5] px-0 sm:block flex flex-col items-center sm:text-left text-center">
-                        <h1 className="w-fit text-5xl font-bold leading-10 md:leading-tight">
-                            Hi, I&apos;m Logan<span className="md:hidden">.</span>
-                            <span className="hidden md:inline"> Meeks. </span>
-                            <br /> <span className="font-normal text-3xl md:font-bold md:text-5xl">I&apos;m a full stack developer.</span>
-                        </h1>
-                        <Button asChild className="w-fit mt-8 sm:mt-2">
-                            <Link href="#contact">Contact Me</Link>
-                        </Button>
+                        <div className="w-full sm:px-16 py-40 z-10 flex-[1.5] px-0 flex flex-col gap-4 items-center lg:items-start lg:text-left text-center">
+                            <h1 className="w-fit text-3xl font-bold">Affordable Web Solutions Delivering Big Results for Small Businesses</h1>
+                            <p className="font-normal text-lg">
+                                Unlock the potential of your online business with stunning website designs and custom applications tailored to your vision &
+                                goals.
+                            </p>
+                            <Button asChild className="w-fit mt-4">
+                                <Link href="#contact">Contact Me</Link>
+                            </Button>
+                        </div>
                     </div>
                 </section>
 

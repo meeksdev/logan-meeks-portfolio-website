@@ -6,7 +6,8 @@ const Logo = ({ variant, className = '' }) => {
             className={cn(
                 'w-16 h-16', // Base size
                 (!variant || variant === 'default') && '[--accent-color:#18b0dd] [--main-color:#ffffff]', // Default variant
-                variant === 'hero' && '[--accent-color:#101619] [--main-color:#101619] sm:[--accent-color:#18b0dd] sm:[--main-color:#ffffff]', // Medium screens
+                variant === 'businessHero' && '[--accent-color:#101619] [--main-color:#101619] lg:[--accent-color:#18b0dd] lg:[--main-color:#ffffff]', // Medium screens
+                variant === 'profileHero' && '[--accent-color:#101619] [--main-color:#101619] sm:[--accent-color:#18b0dd] sm:[--main-color:#ffffff]', // Medium screens
                 className
             )}
             viewBox="0 0 512 512"
