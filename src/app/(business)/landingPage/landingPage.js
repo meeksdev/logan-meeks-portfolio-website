@@ -129,7 +129,7 @@ export default function LandingPage() {
     const { ref: aboutRef, inView: aboutInView } = useInView({
         threshold: threshold, // trigger when 50% of the element is visible
     });
-    const { ref: skillsRef, inView: skillsInView } = useInView({
+    const { ref: servicesRef, inView: servicesInView } = useInView({
         threshold: threshold, // trigger when 50% of the element is visible
     });
     const { ref: projectsRef, inView: projectsInView } = useInView({
@@ -144,14 +144,14 @@ export default function LandingPage() {
             setInViewElement('hero');
         } else if (aboutInView) {
             setInViewElement('about');
-        } else if (skillsInView) {
-            setInViewElement('skills');
+        } else if (servicesInView) {
+            setInViewElement('services');
         } else if (projectsInView) {
             setInViewElement('projects');
         } else if (contactInView) {
             setInViewElement('contact');
         }
-    }, [heroInView, aboutInView, skillsInView, projectsInView, contactInView]);
+    }, [heroInView, aboutInView, servicesInView, projectsInView, contactInView]);
 
     function ReviewStars({ rating }) {
         const validRating = Math.min(Math.max(rating, 1), 5); // Ensure the rating is between 1 and 5
@@ -243,7 +243,7 @@ export default function LandingPage() {
                 </section>
 
                 {/* Services */}
-                <section id="skills" ref={skillsRef} className="sm:px-16 py-24 visible:bg-red-500 px-6  max-w-screen-xl mx-auto">
+                <section id="services" ref={servicesRef} className="sm:px-16 py-24 visible:bg-red-500 px-6  max-w-screen-xl mx-auto">
                     <h2 className="text-2xl font-medium mb-12">Services</h2>
                     <Tabs orientation="vertical" defaultValue="design" className="flex flex-col gap-1 sm:flex-row">
                         <TabsList className="min-w-[232px] text-center sm:text-left justify-start flex flex-col border">
@@ -332,52 +332,6 @@ export default function LandingPage() {
                         </TabsContent>
                     </Tabs>
                 </section>
-
-                {/* Skills Section */}
-                {/* <section id="skills" ref={skillsRef} className="sm:px-16 py-24 visible:bg-red-500 px-6  max-w-screen-xl mx-auto">
-                    <h2 className="text-2xl font-medium mb-12">Skills</h2>
-                    <section className="flex flex-wrap justify-center gap-6 sm:gap-12">
-                        <Card className="flex flex-1 min-w-64 max-w-md gap-6 p-6">
-                            <CardHeader className="p-0">
-                                <Code size={32} className="mr-2 text-primary" />
-                            </CardHeader>
-                            <CardContent className="p-0">
-                                <CardTitle className="text-2xl mb-2 font-normal">Languages</CardTitle>
-                                <p className="opacity-70">Javascript</p>
-                                <p className="opacity-70">C++</p>
-                                <p className="opacity-70">HTML</p>
-                                <p className="opacity-70">CSS</p>
-                                <p className="opacity-70">Python</p>
-                            </CardContent>
-                        </Card>
-                        <Card className="flex flex-1 min-w-64 max-w-md gap-6 p-6">
-                            <CardHeader className="p-0">
-                                <Layers size={32} className="mr-2 text-primary" />
-                            </CardHeader>
-                            <CardContent className="p-0">
-                                <CardTitle className="text-2xl mb-2 font-normal">Frameworks</CardTitle>
-                                <p className="opacity-70">React</p>
-                                <p className="opacity-70">Next.js</p>
-                                <p className="opacity-70">Tailwind CSS</p>
-                                <p className="opacity-70">Shadcn/ui</p>
-                                <p className="opacity-70">Node.js</p>
-                                <p className="opacity-70">Express</p>
-                                <p className="opacity-70">PostgreSQL</p>
-                            </CardContent>
-                        </Card>
-                        <Card className="flex flex-1 min-w-64 max-w-md gap-6 p-6">
-                            <CardHeader className="p-0">
-                                <Wrench size={32} className="mr-2 text-primary" />
-                            </CardHeader>
-                            <CardContent className="p-0">
-                                <CardTitle className="text-2xl mb-2 font-normal">Tools</CardTitle>
-                                <p className="opacity-70">Git</p>
-                                <p className="opacity-70">Github</p>
-                                <p className="opacity-70">Arduino</p>
-                            </CardContent>
-                        </Card>
-                    </section>
-                </section> */}
 
                 {/* Projects Section */}
                 <section id="projects" ref={projectsRef} className="sm:px-16 py-24 px-6  max-w-screen-xl mx-auto">

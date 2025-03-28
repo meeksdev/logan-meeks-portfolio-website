@@ -40,10 +40,10 @@ function MyNavigationMenuList({ handleClick, inViewElement, className = '' }) {
             <NavigationMenuItem>
                 <NavigationMenuLink
                     onClick={handleClick}
-                    href="#skills"
-                    className={`p-2  hover:text-accent rounded-md ${inViewElement === 'skills' ? 'bg-border' : ''}`}
+                    href="#services"
+                    className={`p-2  hover:text-accent rounded-md ${inViewElement === 'services' ? 'bg-border' : ''}`}
                 >
-                    Skills
+                    Services
                 </NavigationMenuLink>
             </NavigationMenuItem>
             <NavigationMenuItem>
