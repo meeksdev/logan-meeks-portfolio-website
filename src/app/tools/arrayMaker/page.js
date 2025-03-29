@@ -160,7 +160,7 @@ export default function ArrayMaker() {
                                     {winLine.map((cell, j) => (
                                         <span key={j}>{j === winLine.length - 1 ? <span key={j}>{cell}</span> : <span key={j}>{cell}, </span>}</span>
                                     ))}
-                                    <span key={`span2${i}`}>{`], // Winline ${i}`}</span>
+                                    <span key={`span2${i}`}>{`], // Winline ${i + 1}`}</span>
                                     <br />
                                 </div>
                             ))}
